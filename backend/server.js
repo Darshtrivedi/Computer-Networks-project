@@ -8,16 +8,17 @@ app.use(express.json());
 
 const PORT = 5000;
 
-// Endpoint for Go-Back-N simulation
+
 app.post('/simulate/gbn', (req, res) => {
-    const { packets, windowSize, lossRate } = req.body;
-    const result = simulateGBN(packets, windowSize, lossRate);
+    console.log("hi")
+    const { packets, windowSize, lossRate , startPacket} = req.body;
+    const result = simulateGBN(startPacket,packets, windowSize, lossRate);
     res.json(result);
 });
 
-// Endpoint for Selective Repeat simulation
+
 app.post('/simulate/sr', (req, res) => {
-    const { packets, windowSize, lossRate } = req.body;
+    const {startPacket, packets, windowSize, lossRate } = req.body;
     const result = simulateSR(packets, windowSize, lossRate);
     res.json(result);
 });

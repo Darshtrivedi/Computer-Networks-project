@@ -1,6 +1,6 @@
 import React from 'react';
-import PacketSimulator from './PacketSimulator';
-import './styles.css';
+import PacketSimulator from './Components/PacketSimulator';
+// import './styles.css';
 
 function App() {
   return (
